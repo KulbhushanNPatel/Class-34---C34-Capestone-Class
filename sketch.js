@@ -1,9 +1,3 @@
-// Angry Birds
-// Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/138-angry-birds.html
-// https://youtu.be/TDQzoe9nslY
-// https://editor.p5js.org/codingtrain/sketches/LbNt1nyxE
-
 const { Engine, World, Bodies, Mouse, MouseConstraint, Constraint } = Matter;
 
 let ground;
@@ -58,8 +52,8 @@ function setup() {
 
   // A fix for HiDPI displays
   // mouse.pixelRatio = pixelDensity();
-  mConstraint = MouseConstraint.create(engine, options);
-  World.add(world, mConstraint);
+  // mConstraint = MouseConstraint.create(engine, options);
+  // World.add(world, mConstraint);
 }
 
 
@@ -72,6 +66,9 @@ function draw() {
   }
   slingshot.show();
   bird.show();
+  obs1.show();
+  obs2.show();
+  obs3.show();
 
   
   
@@ -94,3 +91,10 @@ function mouseReleased() {
   }, 100);
 }
 
+function mouseDragged(){
+
+  // if (slingshot.body != null){
+  // }
+  Matter.Body.setPosition(bird.body, {x: mouseX, y:mouseY})
+
+}
